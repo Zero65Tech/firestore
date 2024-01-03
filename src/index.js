@@ -1,7 +1,8 @@
+const firestore = require('@google-cloud/firestore');
+
 exports.init = async ({ projectId, collections }) => {
 
-  let firestore = require('@google-cloud/firestore');
-  let Firestore = new firestore.Firestore({ projectId });
+  const Firestore = new firestore.Firestore({ projectId });
 
   exports.Firestore = {
     FieldValue: firestore.FieldValue,
