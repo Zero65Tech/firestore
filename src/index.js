@@ -7,6 +7,7 @@ exports.init = async ({ projectId, collections }) => {
   exports.FieldValue = firestore.FieldValue;
   exports.Timestamp  = firestore.Timestamp;
 
+  exports.runTransaction = (updateFunction) => Firestore.runTransaction(updateFunction);
   exports.getAll = (...refs) => Firestore.getAll(...refs);
   exports.batch  = () => Firestore.batch();
 
