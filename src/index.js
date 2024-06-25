@@ -5,11 +5,11 @@ exports.init = async ({ projectId, collections }) => {
   const Firestore = new firestore.Firestore({ projectId });
 
   exports.FieldValue = firestore.FieldValue;
-  exports.Timestamp  = firestore.Timestamp;
+  exports.Timestamp = firestore.Timestamp;
 
-  exports.runTransaction = (updateFunction) => Firestore.runTransaction(updateFunction);
   exports.getAll = (...refs) => Firestore.getAll(...refs);
-  exports.batch  = () => Firestore.batch();
+  exports.batch = () => Firestore.batch();
+  exports.runTransaction = (updateFunction) => Firestore.runTransaction(updateFunction);
 
   for(let collection of collections)
     exports[collection] = Firestore.collection(collection);
